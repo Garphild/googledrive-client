@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-async function downloadFileById(id, path, drive) {
+function downloadFileById(id, path, drive) {
   return new Promise((resolve, reject) => {
     if (!id) {
       reject(new Error('ID is required'));
@@ -21,6 +21,7 @@ async function downloadFileById(id, path, drive) {
           .on('end', () => {
             driveResolve({
               status: 'success',
+              size: progress,
               filePath,
             });
           })
