@@ -1,5 +1,5 @@
 {
-  "name": "googledrive-client",
+  "name": "@garphild/googledrive-client",
   "version": "1.0.0",
   "main": "build/index.js",
   "license": "MIT",

@@ -11,4 +11,15 @@ describe('simple', () => {
     const resp = await downloadFileById('15j2wx4QHnLTKMVJnwsxjSm-z7uPP2lfN', './tmp/main.jpg');
     expect(resp.status).toBe('success');
   });
+  it('test 2', () => {
+    expect.assertions(1);
+    return googleApi(path.join(__dirname, 'jwt.keys.json'))
+      .then((myApi) => {
+        const resp = myApi.downloadFileById('15j2wx4QHnLTKMVJnwsxjSm-z7uPP2lfN', './tmp/main2.jpg');
+        return resp;
+      })
+      .then((resp) => {
+        expect(resp.status).toBe('success');
+      });
+  });
 });
